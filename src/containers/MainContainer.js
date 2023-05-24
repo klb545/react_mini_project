@@ -14,8 +14,11 @@ const MainContainer = () => {
 
     const [caughtFishList, setCaughtFishList] = useState([]);
 
-    const [treasurePositionX, setTreasurePositionX] = useState(Math.floor(Math.random()*440));
-    const [treasurePositionY, setTreasurePositionY] = useState(Math.floor(Math.random()*440));
+    const [gameContainerWidth, setGameContainerWidth] = useState(600);
+    const [gameContainerHeight, setGameContainerHeight] = useState(600);
+
+    const [treasurePositionX, setTreasurePositionX] = useState(Math.floor(Math.random()*(gameContainerWidth-60)));
+    const [treasurePositionY, setTreasurePositionY] = useState(Math.floor(Math.random()*(gameContainerHeight-60)));
 
     const [wallet, setWallet] = useState(0);
 
@@ -39,8 +42,9 @@ const MainContainer = () => {
             const fishQuantity = document.querySelector(`#quantity_of_${randomFish.id}`);
             fishQuantity.innerText = parseInt(fishQuantity.innerText) + 1;
         }
-        setTreasurePositionX(Math.floor(Math.random()*450));
-        setTreasurePositionY(Math.floor(Math.random()*450));
+        // setTreasurePositionX(Math.floor(Math.random()*(gameContainerWidth-60)));
+        // setTreasurePositionY(Math.floor(Math.random()*(gameContainerHeight-60)));
+        moveTreasure();
     }
 
     useEffect( () => {
@@ -61,10 +65,22 @@ const MainContainer = () => {
         setCaughtFishList(caughtFishList.filter(fishInList => fishInList != fishObject));
     }
 
+    const moveTreasure = () => {
+        setTreasurePositionX(Math.floor(Math.random()*(gameContainerWidth-60)));
+        setTreasurePositionY(Math.floor(Math.random()*(gameContainerHeight-60)));
+    }
+    useEffect(()=>{
+        const intervalId = setInterval(moveTreasure, 5000);
+        return () => {
+            clearInterval(intervalId);
+        }
+    }, [])
+    
+
 
     return ( 
         <div className="main-container">
-            <GameContainer addFishToCaughtFishList={addFishToCaughtFishList} treasurePositionX={treasurePositionX} treasurePositionY={treasurePositionY} />
+            <GameContainer containerWidth={gameContainerWidth} containerHeight={gameContainerHeight} addFishToCaughtFishList={addFishToCaughtFishList} treasurePositionX={treasurePositionX} treasurePositionY={treasurePositionY} />
             <CaughtFishList caughtFishList={caughtFishList} wallet={wallet} increaseWallet={increaseWallet} removeFromCaughtFishList={removeFromCaughtFishList}/>
         </div>
      );

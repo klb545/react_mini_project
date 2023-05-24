@@ -5,7 +5,7 @@ const CaughtFishList = ({caughtFishList, wallet, increaseWallet, removeFromCaugh
     const list = caughtFishList.map(fishObject => <CaughtFish key={fishObject.id} fishObject={fishObject} wallet={wallet} increaseWallet={increaseWallet} removeFromCaughtFishList={removeFromCaughtFishList}/>);
     
     const listOfPrices = caughtFishList.map(fishObject => fishObject.price / 50);
-    const totalValue = listOfPrices.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    const totalValue = Math.round(listOfPrices.reduce((accumulator, currentValue) => accumulator + currentValue, 0));
 
     return ( 
         <div className="caught-fish">

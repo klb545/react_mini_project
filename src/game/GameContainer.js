@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import Treasure from "./Treasure";
 import Boat from "./Boat";
 
-const GameContainer = ({addFishToCaughtFishList, treasurePositionX, treasurePositionY}) => {
-    const [containerWidth, setContainerWidth] = useState(600);
-    const [containerHeight, setContainerHeight] = useState(600);
+const GameContainer = ({containerWidth, containerHeight, addFishToCaughtFishList, treasurePositionX, treasurePositionY}) => {
+    // const [containerWidth, setContainerWidth] = useState(600);
+    // const [containerHeight, setContainerHeight] = useState(600);
 
     const [boatPositionX, setBoatPositionX] = useState(200);
     const [boatPositionY, setBoatPositionY] = useState(200);
