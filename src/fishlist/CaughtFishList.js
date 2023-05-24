@@ -1,9 +1,7 @@
-import { useEffect } from "react";
 import CaughtFish from "./CaughtFish"
 
 const CaughtFishList = ({caughtFishList, wallet, increaseWallet, removeFromCaughtFishList}) => {
     
-    // const list = caughtFishList.filter( (item, pos, self) => self.indexOf(item) == pos ).map(fishObject => <CaughtFish key={fishObject.id} fishObject={fishObject} wallet={wallet} increaseWallet={increaseWallet}/>);
     const list = caughtFishList.map(fishObject => <CaughtFish key={fishObject.id} fishObject={fishObject} wallet={wallet} increaseWallet={increaseWallet} removeFromCaughtFishList={removeFromCaughtFishList}/>);
     
     const listOfPrices = caughtFishList.map(fishObject => fishObject.price / 50);

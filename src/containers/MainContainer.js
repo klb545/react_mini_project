@@ -31,16 +31,14 @@ const MainContainer = () => {
     }, [])    
 
     const addFishToCaughtFishList = () => {
-        // const randomFish = allFishData[Math.floor(Math.random()*allFishData.length)];
         const randomFish = randomFishList[Math.floor(Math.random()*randomFishList.length)];
         if(!caughtFishList.some(fish => fish.id === randomFish.id)){
             setCaughtFishList([...caughtFishList, randomFish]);
         } else {
-            // increase quantity
+            // increase quantity in td
             const fishQuantity = document.querySelector(`#quantity_of_${randomFish.id}`);
             fishQuantity.innerText = parseInt(fishQuantity.innerText) + 1;
         }
-        // setCaughtFishList([...caughtFishList, randomFish]);
         setTreasurePositionX(Math.floor(Math.random()*450));
         setTreasurePositionY(Math.floor(Math.random()*450));
     }
