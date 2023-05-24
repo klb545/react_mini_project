@@ -37,7 +37,7 @@ const MainContainer = () => {
             setCaughtFishList([...caughtFishList, randomFish]);
         } else {
             // increase quantity
-            const fishQuantity = document.querySelector(`quantity_of_${randomFish.id}`);
+            const fishQuantity = document.querySelector(`#quantity_of_${randomFish.id}`);
             fishQuantity.innerText = parseInt(fishQuantity.innerText) + 1;
         }
         // setCaughtFishList([...caughtFishList, randomFish]);
