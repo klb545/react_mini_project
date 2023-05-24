@@ -1,11 +1,14 @@
 .main-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 30px
 }
 
 
 .game-water-container{
   background-color: rgb(0, 234, 255);
+  margin: 30px;
+  position: relative;
 }
 
  /* Universal pixel colours */

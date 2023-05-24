@@ -70,7 +70,7 @@ const MainContainer = () => {
         setTreasurePositionY(Math.floor(Math.random()*(gameContainerHeight-60)));
     }
     useEffect(()=>{
-        const intervalId = setInterval(moveTreasure, 5000);
+        const intervalId = setInterval(moveTreasure,7000);
         return () => {
             clearInterval(intervalId);
         }

@@ -35,7 +35,7 @@ const GameContainer = ({containerWidth, containerHeight, addFishToCaughtFishList
         }
     }
     const moveDown = () => {
-        if(boatPositionY <= containerWidth - 80){
+        if(boatPositionY <= containerHeight - 80){
             setBoatPositionY(boatPositionY + boatSpeed);
         }
     }
@@ -64,6 +64,10 @@ const GameContainer = ({containerWidth, containerHeight, addFishToCaughtFishList
         }
         checkIfNearFish();
     }
+
+    // const intervalThing = () => {
+    //     setInterval(moveTreasure, 1000);
+    // }
 
 
     return ( 

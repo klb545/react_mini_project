@@ -9,9 +9,9 @@ const CaughtFishList = ({caughtFishList, wallet, increaseWallet, removeFromCaugh
 
     return ( 
         <div className="caught-fish">
-            <h2>My Collection</h2>
-            <h4>Total value of collection: £{totalValue}</h4>
-            <h4>Wallet: £{wallet}</h4>
+            <h2>Collection</h2>
+            <h3>Total value of collection:&emsp;£{totalValue} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Wallet:&emsp;£{wallet}</h3>
+            {/* <h4>Wallet: £{wallet}</h4> */}
             <table className="table">
                 <tbody>
                     <tr>
