@@ -1,4 +1,73 @@
-.App {
+.main-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.game-water-container{
+  background-color: aqua;
+}
+
+ /* Universal pixel colours */
+.pixel{
+  background-color: transparent;
+  height: 5px;
+  width: 5px;
+}
+.black-pixel{
+  background-color: black;
+}
+.white-pixel{
+  background-color: white;
+}
+
+ /* Duck-specific pixel colours */
+.duck-yellow-pixel{
+  background-color: #F6C904;
+}
+.duck-orange-pixel{
+  background-color: rgb(246,105,4);
+}
+
+
+/* Boat-specific pixel colours */
+.boat-yellow-pixel {
+  background-color: rgb(249,193,61);
+}
+.boat-red-pixel {
+  background-color: rgb(193,46,55);
+}
+.boat-pink-pixel {
+  background-color: rgb(225,95,127);
+}
+.boat-blue-pixel {
+  background-color: rgb(120,176,211);
+}
+.boat-brown-pixel {
+  background-color: rgb(99,71,60);
+}
+.boat-cream-pixel {
+  background-color: rgb(227,198,151);
+}
+
+/* Boat sprite styling */
+.sprite {
+  background-color: transparent;
+}
+
+
+.table td {
+  text-align: center;
+  width: 200px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +104,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
