@@ -37,15 +37,8 @@ const MainContainer = () => {
             setCaughtFishList([...caughtFishList, randomFish]);
         } else {
             // increase quantity
-            // const countOfFish = document.querySelector(`quantity_of_${randomFish.id}`);
-            // countOfFish.innerText = (parseInt(countOfFish) + 1).toString();
-            const updatedCaughtFishList = caughtFishList.map(fish => {
-                if (fish.id === randomFish.id) {
-                  return { ...fish, quantity: fish.quantity + 1 };
-                }
-                return fish;
-              });
-              setCaughtFishList(updatedCaughtFishList);
+            const fishQuantity = document.querySelector(`quantity_of_${randomFish.id}`);
+            fishQuantity.innerText = parseInt(fishQuantity.innerText) + 1;
         }
         // setCaughtFishList([...caughtFishList, randomFish]);
         setTreasurePositionX(Math.floor(Math.random()*450));
