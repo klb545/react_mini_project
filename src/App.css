@@ -26,6 +26,9 @@ body {
 .market-list{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  margin: 30px;
+  gap: 10px;
 }
 
 .game-water-container{
