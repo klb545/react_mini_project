@@ -2,7 +2,7 @@ const MarketList = ({allArtData, randomArtWork1, randomArtWork2, randomArtWork3}
 
     return ( 
         <div>
-            <h2>Market</h2>
+            <h2>Market - unavailable, coming soon</h2>
             <div className="market-list">
                 <div>
                     <img src={randomArtWork1.image_uri}/>
