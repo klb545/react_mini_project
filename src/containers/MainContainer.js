@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CaughtFishList from "../fishlist/CaughtFishList";
 import GameContainer from "../game/GameContainer";
+import MarketList from "../shop/MarketList";
 
 const MainContainer = () => {
 
@@ -14,6 +15,11 @@ const MainContainer = () => {
 
     const [caughtFishList, setCaughtFishList] = useState([]);
 
+    const [allArtData, setAllArtData] = useState([]);
+    const [randomArtWork1, setRandomArtwork1] = useState(null);
+    const [randomArtWork2, setRandomArtwork2] = useState(null);
+    const [randomArtWork3, setRandomArtwork3] = useState(null);
+
     const [gameContainerWidth, setGameContainerWidth] = useState(600);
     const [gameContainerHeight, setGameContainerHeight] = useState(600);
 
@@ -22,6 +28,8 @@ const MainContainer = () => {
 
     const [wallet, setWallet] = useState(0);
 
+    
+
     const fetchAllFishData = async () => {
         const response = await fetch(`https://acnhapi.com/v1/fish/`);
         const fishJsonData = await response.json();
@@ -29,8 +37,23 @@ const MainContainer = () => {
         setAllFishData(fishJsonDataArray);
     }
 
+    const fetchAllArtData = async () => {
+        const response = await fetch(`https://acnhapi.com/v1/art/`);
+        const artJsonData = await response.json();
+        const artJsonDataArray = Object.values(artJsonData);
+        setAllArtData(artJsonDataArray);
+        setRandomArtwork1(artJsonDataArray[Math.floor(Math.random()*(43))]);
+        setRandomArtwork2(artJsonDataArray[Math.floor(Math.random()*(43))]);
+        setRandomArtwork3(artJsonDataArray[Math.floor(Math.random()*(43))]);
+    }
+
+    // const randomArtWork = () => {
+        
+    // }
+
     useEffect( () => {
         fetchAllFishData();
+        fetchAllArtData();
     }, [])    
 
     const addFishToCaughtFishList = () => {
@@ -75,13 +98,16 @@ const MainContainer = () => {
             clearInterval(intervalId);
         }
     }, [])
+
+    
     
 
 
     return ( 
         <div className="main-container">
-            <GameContainer containerWidth={gameContainerWidth} containerHeight={gameContainerHeight} addFishToCaughtFishList={addFishToCaughtFishList} treasurePositionX={treasurePositionX} treasurePositionY={treasurePositionY} />
             <CaughtFishList caughtFishList={caughtFishList} wallet={wallet} increaseWallet={increaseWallet} removeFromCaughtFishList={removeFromCaughtFishList}/>
+            <GameContainer containerWidth={gameContainerWidth} containerHeight={gameContainerHeight} addFishToCaughtFishList={addFishToCaughtFishList} treasurePositionX={treasurePositionX} treasurePositionY={treasurePositionY} />
+            {randomArtWork1 && randomArtWork2 && randomArtWork3 ? <MarketList allArtData={allArtData} randomArtWork1={randomArtWork1} randomArtWork2={randomArtWork2} randomArtWork3={randomArtWork3}/> : "Loading..."}
         </div>
      );
 }
