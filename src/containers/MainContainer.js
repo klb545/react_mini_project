@@ -108,6 +108,7 @@ const MainContainer = () => {
             <CaughtFishList caughtFishList={caughtFishList} wallet={wallet} increaseWallet={increaseWallet} removeFromCaughtFishList={removeFromCaughtFishList}/>
             <GameContainer containerWidth={gameContainerWidth} containerHeight={gameContainerHeight} addFishToCaughtFishList={addFishToCaughtFishList} treasurePositionX={treasurePositionX} treasurePositionY={treasurePositionY} />
             {randomArtWork1 && randomArtWork2 && randomArtWork3 ? <MarketList allArtData={allArtData} randomArtWork1={randomArtWork1} randomArtWork2={randomArtWork2} randomArtWork3={randomArtWork3}/> : "Loading..."}
+            <h3 style={{color: "#39FF14", textAlign: "center"}}>&emsp;Arrow keys to sail</h3>
         </div>
      );
 }

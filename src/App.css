@@ -2,19 +2,25 @@ body {
   background-color: black;
   color: white;
   font-family: 'Courier New', Courier, monospace;
+  margin: 30px;
 }
+
 
 .main-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin: 30px;
+  /* margin: 30px; */
 }
 
 .caught-fish{
-  background-color: rgb(190, 190, 190);
+  background-color: rgb(132, 132, 132);
   padding: 20px;
+  margin: 30px;
   color: black;
+  height: 560px;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .market-list{
@@ -26,6 +32,7 @@ body {
   background-color: rgb(0, 234, 255);
   margin: 30px;
   position: relative;
+  justify-self: center;
 }
 
  /* Universal pixel colours */

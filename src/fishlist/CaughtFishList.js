@@ -18,7 +18,7 @@ const CaughtFishList = ({caughtFishList, wallet, increaseWallet, removeFromCaugh
             <table className="table">
                 <tbody>
                     <tr>
-                        <td><strong>Click to Sell</strong></td>
+                        <td style={{color: "#39FF14"}}><strong>Click to Sell</strong></td>
                         <td><strong>Name</strong></td>
                         <td><strong>Rarity</strong></td>
                         <td><strong>Value</strong></td>
