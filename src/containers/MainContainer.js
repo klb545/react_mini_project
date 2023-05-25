@@ -47,10 +47,6 @@ const MainContainer = () => {
         setRandomArtwork3(artJsonDataArray[Math.floor(Math.random()*(43))]);
     }
 
-    // const randomArtWork = () => {
-        
-    // }
-
     useEffect( () => {
         fetchAllFishData();
         fetchAllArtData();
@@ -99,10 +95,6 @@ const MainContainer = () => {
         }
     }, [])
 
-    
-    
-
-
     return ( 
         <div className="main-container">
             <CaughtFishList caughtFishList={caughtFishList} wallet={wallet} increaseWallet={increaseWallet} removeFromCaughtFishList={removeFromCaughtFishList}/>
@@ -114,14 +106,4 @@ const MainContainer = () => {
 }
  
 export default MainContainer;
-
-
-
-
-
-
-
-
-
-
 

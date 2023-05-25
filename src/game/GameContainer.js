@@ -1,13 +1,9 @@
-import { useState, useEffect } from "react";
-// import Treasure from "../game/Treasure";
-// import DuckSprite from "../components/DuckSprite";
+import { useState} from "react";
 import Treasure from "./Treasure";
 import Boat from "./Boat";
 
 const GameContainer = ({containerWidth, containerHeight, addFishToCaughtFishList, treasurePositionX, treasurePositionY}) => {
-    // const [containerWidth, setContainerWidth] = useState(600);
-    // const [containerHeight, setContainerHeight] = useState(600);
-
+    
     const [boatPositionX, setBoatPositionX] = useState(200);
     const [boatPositionY, setBoatPositionY] = useState(200);
     const [boatImage, setboatImage] = useState("heading left");
@@ -65,11 +61,6 @@ const GameContainer = ({containerWidth, containerHeight, addFishToCaughtFishList
         checkIfNearFish();
     }
 
-    // const intervalThing = () => {
-    //     setInterval(moveTreasure, 1000);
-    // }
-
-
     return ( 
         <div className="game-water-container" style={{height: `${containerHeight}px`, width: `${containerWidth}px`}}>
             <Treasure containerHeight={containerHeight} containerWidth={containerWidth} positionX={treasurePositionX} positionY={treasurePositionY} addFishToCaughtFishList={addFishToCaughtFishList}/>
@@ -80,5 +71,3 @@ const GameContainer = ({containerWidth, containerHeight, addFishToCaughtFishList
 }
  
 export default GameContainer;
-
-

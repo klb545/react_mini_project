@@ -27,7 +27,7 @@ const Treasure = ({containerHeight, containerWidth, positionX, positionY, addFis
         </div> 
     );
 
-
+ // // Previously was fish: 
     // const orange = <div className="pixel duck-orange-pixel"></div>
     // const black = <div className="pixel black-pixel"></div>
     // const white = <div className="pixel white-pixel"></div>
